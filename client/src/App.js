@@ -1,5 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
+import {
+  Container,
+  AppBar,
+  Typography,
+  Grow,
+  Grid,
+  Fab,
+  Button,
+  Toolbar,
+  IconButton,
+} from "@material-ui/core";
 import { useDispatch } from "react-redux";
 
 import Posts from "./components/Posts/Posts";
@@ -18,34 +28,46 @@ const App = () => {
   }, [currentId, dispatch]);
 
   return (
-    <Container width="100%">
-      <div width="100%">
-        <AppBar className={classes.appBar} position="static" width="100%">
-          <img
-            className={classes.image}
-            src={memories}
-            alt="icon"
-            height="50"
-          />
-          <Typography className={classes.heading} variant="h4" align="center">
-            DAY-BOOK
-          </Typography>
-        </AppBar>
-      </div>
+    <Container>
+      <AppBar className={classes.appBar} position="static" width="100%">
+        <img className={classes.image} src={memories} alt="icon" height="50" />
+        <Typography className={classes.heading} variant="h4" align="center">
+          DAY-BOOK
+        </Typography>
+      </AppBar>
 
       <Container className={classes.container}>
         <Grid
           container
-          justify="space-between"
-          alignItems="stretch"
+          // justify="space-between"
+          // alignItems="stretch"
           spacing={3}
         >
-          <Grid item xs={12} sm={4}>
+          {/* <Grid item xs={12} sm={4}>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
-          </Grid>
+          </Grid> */}
+          <Grid item xs={12} sm={2}></Grid>
           <Grid item xs={12} sm={8}>
+            <Fab
+              variant="extended"
+              color="primary"
+              aria-label="add"
+              style={{
+                margin: 0,
+                top: "auto",
+                right: 20,
+                bottom: 20,
+                left: "auto",
+                position: "fixed",
+                marginBottom: 10,
+                backgroundColor: "#7B1FA2",
+              }}
+            >
+              New Memory
+            </Fab>
             <Posts setCurrentId={setCurrentId} />
           </Grid>
+          <Grid item xs={12} sm={2}></Grid>
         </Grid>
       </Container>
     </Container>

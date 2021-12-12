@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  TextField,
-  Button,
-  Typography,
-  Paper,
-} from "@material-ui/core";
+import { TextField, Button, Typography, Paper, Box, Grid } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import FileBase from "react-file-base64";
 
@@ -112,24 +107,31 @@ const Form = ({ currentId, setCurrentId }) => {
             }
           />
         </div>
-        <Button
-          className={classes.buttonSubmit}
-          variant="contained"
-          size="small"
-          type="submit"
-          fullWidth
+        <Grid
+          container
+          justify="space-around"
+          alignItems="stretch"
+          //spacing={3}
         >
-          <Typography style={{color: "white"}}>Submit</Typography>
-        </Button>
-        <Button
-        className={classes.buttonClear}
-          variant="contained"
-          size="small"
-          onClick={clear}
-          fullWidth
-        >
-          <Typography style={{color: "white"}}>Clear</Typography>
-        </Button>
+          <Button
+            className={classes.buttonSubmit}
+            variant="contained"
+            size="small"
+            type="submit"
+            //fullWidth
+          >
+            <Typography style={{ color: "white" }}>Submit</Typography>
+          </Button>
+          <Button
+            className={classes.buttonClear}
+            variant="contained"
+            size="small"
+            onClick={clear}
+            //fullWidth
+          >
+            <Typography style={{ color: "white" }}>Clear</Typography>
+          </Button>
+        </Grid>
       </form>
     </Paper>
   );

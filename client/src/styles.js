@@ -17,7 +17,7 @@ export default makeStyles(() => ({
     marginLeft: 20,
   },
   image: {
-    marginLeft: '15px',
+    //marginLeft: '15px',
   },
   container: {
     marginTop: 20,
