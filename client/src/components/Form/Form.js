@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { TextField, Button, Typography, Paper, Grid } from "@material-ui/core";
+import {
+  TextField,
+  Button,
+  Typography,
+  Paper,
+  Grid,
+  Switch,
+  Toolbar,
+} from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import FileBase from "react-file-base64";
 
@@ -55,9 +63,12 @@ const Form = ({ currentId, setCurrentId }) => {
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">
-          {currentId ? `Editing "${post.title}"` : "New Post"}
-        </Typography>
+        <Toolbar className={classes.toolbar}>
+          <Typography variant="h5" strong style={{ color: "white" }}>
+            {currentId ? `Editing "${post.title}"` : "New Post"}
+          </Typography>
+        </Toolbar>
+
         <TextField
           name="creator"
           variant="outlined"
@@ -88,7 +99,7 @@ const Form = ({ currentId, setCurrentId }) => {
             setPostData({ ...postData, message: e.target.value })
           }
         />
-        {/* <TextField
+        <TextField
           name="tags"
           variant="outlined"
           label="Tags (coma separated)"
@@ -97,7 +108,7 @@ const Form = ({ currentId, setCurrentId }) => {
           onChange={(e) =>
             setPostData({ ...postData, tags: e.target.value.split(",") })
           }
-        /> */}
+        />
         <div className={classes.fileInput}>
           <FileBase
             type="file"
@@ -107,30 +118,40 @@ const Form = ({ currentId, setCurrentId }) => {
             }
           />
         </div>
-        <Grid
-          container
-          justify="space-around"
-          alignItems="stretch"
-          //spacing={3}
-        >
-          <Button
-            className={classes.buttonSubmit}
-            variant="contained"
-            size="small"
-            type="submit"
-            //fullWidth
-          >
-            <Typography style={{ color: "white" }}>Submit</Typography>
-          </Button>
-          <Button
-            className={classes.buttonClear}
-            variant="contained"
-            size="small"
-            onClick={clear}
-            //fullWidth
-          >
-            <Typography style={{ color: "white" }}>Clear</Typography>
-          </Button>
+        <Grid container justify="space-around" alignItems="center" spacing={3}>
+          <Grid item xs={12} sm={4}>
+            <TextField
+              id="date"
+              label="Date"
+              type="date"
+              variant="outlined"
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Button
+              className={classes.buttonSubmit}
+              variant="contained"
+              size="small"
+              type="submit"
+              //fullWidth
+            >
+              <Typography style={{ color: "white" }}>Submit</Typography>
+            </Button>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Button
+              className={classes.buttonClear}
+              variant="contained"
+              size="small"
+              onClick={clear}
+              //fullWidth
+            >
+              <Typography style={{ color: "white" }}>Clear</Typography>
+            </Button>
+          </Grid>
         </Grid>
       </form>
     </Paper>

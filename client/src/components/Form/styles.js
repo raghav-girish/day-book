@@ -10,6 +10,7 @@ export default makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(1),
+    backgroundColor: "#E1BEE7"
   },
   form: {
     display: 'flex',
@@ -23,10 +24,16 @@ export default makeStyles((theme) => ({
   },
   buttonSubmit: {
     marginBottom: 10,
-    backgroundColor: "#7B1FA2"
+    backgroundColor: "#7B1FA2",
+    width: "100%"
   },
   buttonClear: {
     marginBottom: 10,
-    backgroundColor: "#C62828"
+    backgroundColor: "#C62828",
+    width: "100%"
+  },
+  toolbar: {
+    backgroundColor: "#7B1FA2",
+    width: "100%",
   },
 }));
