@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Container,
-  AppBar,
-  Typography,
-  Grid,
-} from "@material-ui/core";
+import { Container, AppBar, Typography, Grid } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 
 import Posts from "./components/Posts/Posts";
@@ -34,16 +29,14 @@ const App = () => {
       <Container className={classes.container}>
         <Grid
           container
-          // justify="space-between"
-          // alignItems="stretch"
+          justify="space-between"
+          alignItems="stretch"
           spacing={3}
         >
-          <Grid item xs={12} sm={2}></Grid>
-          <Grid item xs={12} sm={8}>
+          <Grid item xs={12} sm={11}>
             <CreateButton />
             <Posts setCurrentId={setCurrentId} />
           </Grid>
-          <Grid item xs={12} sm={2}></Grid>
         </Grid>
       </Container>
     </Container>

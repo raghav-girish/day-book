@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Fab, Modal, Box } from "@material-ui/core";
+import { Fab, Modal, Box, Typography } from "@material-ui/core";
 import { getPosts } from "../../actions/posts";
 import { useDispatch } from "react-redux";
 import Form from "../Form/Form";
@@ -33,7 +33,7 @@ const CreateButton = () => {
         }}
         onClick={handleOpen}
       >
-        New Memory
+        <Typography style={{ fontSize: 25 }}>+</Typography>
       </Fab>
       <Modal
         open={open}

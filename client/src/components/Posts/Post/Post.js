@@ -21,20 +21,26 @@ const Post = ({ post, setCurrentId }) => {
         <Typography variant="h6">{post.creator}</Typography>
         <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
       </div>
-      <div className={classes.overlay2}>
+      {/* <div className={classes.overlay2}>
         <Button style={{ color: 'white' }} size="small" onClick={() => setCurrentId(post._id)}><MoreHorizIcon fontSize="default" /></Button>
-      </div>
+      </div> */}
       <div className={classes.details}>
         <Typography variant="body2" color="textSecondary" component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
       </div>
       <Typography className={classes.title} gutterBottom variant="h5" component="h2">{post.title}</Typography>
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">{post.message}</Typography>
+      <CardContent style={{width:"100%"}}>
+        <Typography variant="body2" color="textSecondary" component="p" >{post.message}</Typography>
       </CardContent>
       <CardActions className={classes.cardActions}>
+        <div style={{width:"100%"}}>
         <Button size="small" color="primary" onClick={() => dispatch(likePost(post._id))}><ThumbUpAltIcon fontSize="small" /> {post.likeCount} </Button>
+        </div>
+        <div>
         <Button size="small"><Star fontSize="small" /></Button>
+        </div>
+        <div>
         <Button size="small" style={{color: "#C62828"}} onClick={() => dispatch(deletePost(post._id))}><DeleteIcon fontSize="small" /></Button>
+        </div>
       </CardActions>
     </Card>
   );

@@ -9,6 +9,7 @@ import {
   Toolbar,
 } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
+import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import FileBase from "react-file-base64";
 
 import useStyles from "./styles";
@@ -68,7 +69,6 @@ const Form = ({ currentId, setCurrentId }) => {
             {currentId ? `Editing "${post.title}"` : "New Post"}
           </Typography>
         </Toolbar>
-
         <TextField
           name="creator"
           variant="outlined"
