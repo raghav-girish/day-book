@@ -10,7 +10,7 @@ export default makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(1),
-    backgroundColor: "#E1BEE7"
+    backgroundColor: "#F3E5F5 "
   },
   form: {
     display: 'flex',

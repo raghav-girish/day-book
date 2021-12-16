@@ -24,8 +24,8 @@ const CreateButton = () => {
         style={{
           margin: 0,
           top: "auto",
-          right: 20,
-          bottom: 20,
+          right: 50,
+          bottom: 50,
           left: "auto",
           position: "fixed",
           marginBottom: 10,
@@ -33,7 +33,7 @@ const CreateButton = () => {
         }}
         onClick={handleOpen}
       >
-        <Typography style={{ fontSize: 25 }}>+</Typography>
+        <Typography style={{ fontSize: 28 }}>+</Typography>
       </Fab>
       <Modal
         open={open}
@@ -48,7 +48,7 @@ const CreateButton = () => {
             left: "50%",
             transform: "translate(-50%, -50%)",
             //width: 400,
-            bgcolor: "background.paper",
+            //bgcolor: "background.paper",
             border: "2px solid #000",
             boxShadow: 24,
             p: 4,
